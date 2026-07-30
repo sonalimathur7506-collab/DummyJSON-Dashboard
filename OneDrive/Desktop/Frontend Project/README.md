@@ -79,7 +79,7 @@ Add your Netlify link here after deployment.
 
 ## 🐙 GitHub Repository
 
-Add your GitHub repository link here.
+https://github.com/sonalimathur7506-collab/DummyJSON-Dashboard
 
 ## 👩 Author
 
