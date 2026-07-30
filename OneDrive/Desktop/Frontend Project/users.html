@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="pagination.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2>DummyJSON Dashboard</h2>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="users.html">Users</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="carts.html">Carts</a></li>
+                <li><a href="quotes.html">Quotes</a></li>
+            </ul>
+
+            <div class="menu-btn" id="menuBtn">
+                ☰
+            </div>
+
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Users Dashboard</h1>
+        <p>Browse all users from DummyJSON API</p>
+    </section>
+
+    <section class="controls">
+
+        <input type="text" id="search" placeholder="Search User...">
+
+        <select id="gender">
+
+            <option value="all">All</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+
+        </select>
+
+        <select id="sort">
+
+            <option value="">Sort</option>
+            <option value="az">Name A-Z</option>
+            <option value="za">Name Z-A</option>
+
+        </select>
+
+    </section>
+
+    <section id="userContainer" class="dashboard">
+
+    </section>
+
+    <div id="pagination" class="pagination"></div>
+
+    <footer>
+
+        <p>© 2026 DummyJSON Dashboard</p>
+        <p>Made with HTML CSS JavaScript</p>
+
+    </footer>
+
+    <script src="users.js"></script>
+    <script src="navbar.js"></script>
+
+</body>
+
+</html>
