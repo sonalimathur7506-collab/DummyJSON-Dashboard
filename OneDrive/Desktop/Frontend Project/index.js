@@ -2,6 +2,11 @@
 
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
+const spinner = document.getElementById("spinner");
+
+window.addEventListener("load", () => {
+    spinner.style.display = "none";
+});
 
 menuBtn.addEventListener("click", () => {
 

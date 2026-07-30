@@ -1,4 +1,5 @@
 const api = "https://dummyjson.com/users";
+const spinner = document.getElementById("spinner");
 
 const container = document.getElementById("userContainer");
 const search = document.getElementById("search");
@@ -14,6 +15,9 @@ const usersPerPage = 8;
 
 // Fetch Users
 async function getUsers() {
+
+    spinner.style.display = "block";
+
     try {
         const response = await fetch(api);
         const data = await response.json();
@@ -22,11 +26,14 @@ async function getUsers() {
         filteredUsers = [...users];
 
         displayUsers();
+
+        spinner.style.display = "none";
+
     } catch (error) {
+        spinner.style.display = "none";
         container.innerHTML = "<h2>Failed to Load Data</h2>";
     }
 }
-
 getUsers();
 
 // Display Users

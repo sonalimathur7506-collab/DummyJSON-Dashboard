@@ -1,4 +1,5 @@
 const container = document.getElementById("productContainer");
+const spinner = document.getElementById("spinner");
 const search = document.getElementById("search");
 const category = document.getElementById("category");
 const sort = document.getElementById("sort");
@@ -7,6 +8,9 @@ let allProducts = [];
 
 // Fetch Products
 async function getProducts() {
+
+    spinner.style.display = "block"; // Show spinner
+
     try {
         const response = await fetch("https://dummyjson.com/products");
         const data = await response.json();
@@ -16,15 +20,18 @@ async function getProducts() {
         loadCategories();
         displayProducts(allProducts);
 
+        spinner.style.display = "none"; // Hide spinner
+
     } catch (error) {
+
+        spinner.style.display = "none"; // Hide spinner if error
+
         container.innerHTML = "<h2>Failed to Load Products!</h2>";
         console.log(error);
     }
 }
 
 getProducts();
-
-
 // Display Products
 function displayProducts(products) {
 

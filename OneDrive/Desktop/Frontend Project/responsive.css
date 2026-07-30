@@ -25,6 +25,11 @@
 /* Mobile */
 
 @media(max-width:768px) {
+    
+    .dashboard {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
 
     .navbar {
         flex-wrap: wrap;
@@ -32,6 +37,8 @@
 
     .menu-btn {
         display: block;
+        background-color:blue;
+        color:white;;
     }
 
     .nav-links {
@@ -60,6 +67,11 @@
 
         border-top: 1px solid rgba(255, 255, 255, .3);
 
+    }
+
+    .nav-links a{
+        background-color:blue;
+        color:yellow;
     }
 
 }

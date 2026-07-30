@@ -1,6 +1,7 @@
 //Get Html elements
 
 const container = document.getElementById("cartContainer");//where all cards will be displayed
+const spinner = document.getElementById("spinner");
 const search = document.getElementById("search");
 const sort = document.getElementById("sort");
 
@@ -9,6 +10,7 @@ let allCarts = [];//stores all api data
 //Fetch Api
 
 async function getCarts() {
+    spinner.style.display = "block"; // 
 
     try {
 
@@ -19,12 +21,13 @@ async function getCarts() {
         allCarts = data.carts;
 
         displayCarts(allCarts);
+        spinner.style.display = "none"; // Hide spinner
 
     }
 
     catch (error) {
 
-        console.log(error);
+        spinner.style.display = "none"; // Hide spinner
 
         container.innerHTML = "<h2>Failed to Load Data</h2>";
 

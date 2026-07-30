@@ -1,4 +1,5 @@
 const container = document.getElementById("quoteContainer");
+const spinner = document.getElementById("spinner");
 const search = document.getElementById("search");
 const sort = document.getElementById("sort");
 
@@ -6,7 +7,7 @@ let allQuotes = [];
 
 // Fetch Quotes
 async function getQuotes() {
-
+    spinner.style.display = "block"; // Show spinner
     try {
 
         const response = await fetch("https://dummyjson.com/quotes");
@@ -15,10 +16,11 @@ async function getQuotes() {
         allQuotes = data.quotes;
 
         displayQuotes(allQuotes);
+        spinner.style.display = "none"; // Hide spinner
 
     } catch (error) {
 
-        console.log(error);
+        spinner.style.display = "none"; // Hide spinner if error
         container.innerHTML = "<h2>Failed to Load Quotes!</h2>";
 
     }
